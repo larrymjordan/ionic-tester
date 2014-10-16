@@ -1,3 +1,19 @@
+machine:
+  post:
+    # Install ionic
+    - npm install -g ionic
+    # Fetch protractor
+    - npm install -g protractor
+    # Start WebdriverJs client and Selenium server
+    - webdriver-manager update
+    - webdriver-manager start:
+        background: true
 dependencies:
   post:
     - npm install -g karma-cli
+
+test:
+  post:
+    - ionic serve:
+        background: true
+    - protractor protractor.config.js
