@@ -8,13 +8,12 @@ machine:
     - webdriver-manager update
 
 dependencies:
+  pre:
+    - bash ./ionic-config.sh
   post:
     - npm install -g karma-cli
 
 test:
-  pre:
-    - sudo sed 's/{/{"ionicServerAddress":"localhost",/' ~/.ionic/ionic.config
-
   post:
     - ionic serve:
         background: true
