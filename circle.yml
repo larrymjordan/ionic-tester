@@ -17,4 +17,5 @@ test:
   post:
     - ionic serve:
         background: true
+    - sleep 5
     - protractor protractor.config.js
