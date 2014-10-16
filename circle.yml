@@ -13,7 +13,7 @@ dependencies:
 
 test:
   pre:
-    - sed 's/{/{"ionicServerAddress":"localhost",/' ./.ionic/ionic.config
+    - sed 's/{/{"ionicServerAddress":"localhost",/' ~/.ionic/ionic.config
 
   post:
     - ionic serve:
