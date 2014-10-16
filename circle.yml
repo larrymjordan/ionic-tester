@@ -6,14 +6,15 @@ machine:
     - npm install -g ionic
     - npm install -g protractor
     - webdriver-manager update
-    - webdriver-manager start:
-        background: true
 
 dependencies:
   post:
     - npm install -g karma-cli
 
 test:
+  pre:
+    - sed 's/{/{"ionicServerAddress":"localhost",/' ./.ionic/ionic.config
+
   post:
     - ionic serve:
         background: true
